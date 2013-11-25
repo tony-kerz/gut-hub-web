@@ -1,1 +1,30 @@
-{"title":"pasta y fagoli","description":"macaroni and beans","url":"http://0.0.0.0:3000/recipes/1.json","ingredients":[{"amount":"1.0","uom":"cup","name":"pasta"},{"amount":"0.5","uom":"cup","name":"celery"},{"amount":"1.0","uom":"tsp","name":"oregano"}],"instructions":[{"step":1,"text":"cook pasta"},{"step":2,"text":"saute celery"},{"step":3,"text":"add oregano"}]}
+{"title": "pasta y fagoli", "description": "macaroni and beans", "url": "http://0.0.0.0:3000/recipes/1.json", "ingredients": [
+    {
+        "amount": "1.0",
+        "uom": "cup",
+        "name": "pasta"
+    },
+    {
+        "amount": "0.5",
+        "uom": "cup",
+        "name": "celery"
+    },
+    {
+        "amount": "1.0",
+        "uom": "tsp",
+        "name": "oregano"
+    }
+], "instructions": [
+    {
+        "step": 1,
+        "text": "cook pasta"
+    },
+    {
+        "step": 2,
+        "text": "saute celery"
+    },
+    {
+        "step": 3,
+        "text": "add oregano"
+    }
+]}
