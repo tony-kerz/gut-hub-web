@@ -53,7 +53,8 @@ angular.module('gut-hub.recipes',
 
                     recipes: function (httpRecipeService) {
 
-                        var promise = httpRecipeService.index()
+                        var promise = httpRecipeService.index();
+                        /***
                             .then(
                             function (data) {
                                 console.log("success: data=%o", data);
@@ -65,6 +66,7 @@ angular.module('gut-hub.recipes',
                                 console.log("notify: update=%o", update);
                             }
                         );
+                         ***/
 
                         return promise;
                     }

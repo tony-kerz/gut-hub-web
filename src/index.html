@@ -98,6 +98,13 @@
     </nav>
 </div>
 
+<div class="container">
+    <div flash-alert active-class="in" class="alert fade">
+        <strong class="alert-heading">{{flash.type}}</strong>
+        <span class="alert-message">{{flash.message}}</span>
+    </div>
+</div>
+
 <div class="container" ui-view="main"></div>
 
 <footer class="footer">
@@ -107,7 +114,8 @@
                 <!--
                 <li><a target="_blank" href="http://gplus.to/kerz"><i class="fa fa-google-plus-square"></i></a></li>
                 -->
-                <li><a target="_blank" href="https://plus.google.com/u/2/+TonyKerz"><i class="fa fa-google-plus-square"></i></a></li>
+                <li><a target="_blank" href="https://plus.google.com/u/2/+TonyKerz"><i
+                        class="fa fa-google-plus-square"></i></a></li>
                 <li><a target="_blank" href="http://twitter.com/tony_kerz"><i class="fa fa-twitter-square"></i></a></li>
                 <li><a target="_blank" href="http://linkedin.com/in/tonykerz"><i class="fa fa-linkedin-square"></i></a>
                 </li>
@@ -121,7 +129,7 @@
                 if you have nothing better to do.
                 <br/>
                 <span class="h5">gut-hub-ui</span> <a class="text-muted"
-                                                     href="http://github.com/tony-kerz/gut-hub-ui/blob/master/CHANGELOG.md">
+                                                      href="http://github.com/tony-kerz/gut-hub-ui/blob/master/CHANGELOG.md">
                 v<%= version %></a> is based on
                 <a href="http://www.angularjs.org">AngularJS</a>,
                 <a href="http://getbootstrap.com">Bootstrap</a>,

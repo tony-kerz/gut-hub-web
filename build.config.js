@@ -69,9 +69,10 @@ module.exports = {
             'vendor/angular-ui-utils/modules/route/route.js',
             // tk
             'vendor/jquery/jquery.js',
-            'vendor/bootstrap/dist/js/bootstrap.js'
+            'vendor/bootstrap/dist/js/bootstrap.js',
             //'vendor/bootstrap/js/collapse.js',
             //'vendor/bootstrap/js/transition.js'
+            'vendor/angular-flash/dist/angular-flash.js'
         ],
         css: [
         ],
