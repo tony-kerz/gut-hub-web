@@ -107,7 +107,8 @@ angular.module('gut-hub.recipes',
     //--------
 
     .controller('recipe-index-ctrl', function ($scope, recipes) {
-        $scope.recipes = recipes;
+        console.log('index-ctrl: recipes=%o', recipes);
+        $scope.recipes = recipes.data;
     })
 
     .controller('recipe-get-ctrl', function ($scope, recipe) {
