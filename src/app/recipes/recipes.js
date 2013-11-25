@@ -14,7 +14,8 @@ angular.module('gut-hub.recipes',
         var baseUrl = '/recipes';
 
         service.index = function () {
-            var promise = $http.get(baseUrl);
+            //var promise = $http.get(baseUrl);
+            var promise = $http.get('recipes.index.json');
             return promise;
         };
 
@@ -55,19 +56,19 @@ angular.module('gut-hub.recipes',
 
                         var promise = httpRecipeService.index();
                         /***
-                            .then(
-                            function (data) {
+                         .then(
+                         function (data) {
                                 console.log("success: data=%o", data);
                             },
-                            function (reason) {
+                         function (reason) {
                                 console.log("failure: reason=%o", reason);
                             },
-                            function (update) {
+                         function (update) {
                                 console.log("notify: update=%o", update);
                             }
-                        );
+                         );
                          ***/
-
+                        console.log('index: promise=%o', promise);
                         return promise;
                     }
                 }
