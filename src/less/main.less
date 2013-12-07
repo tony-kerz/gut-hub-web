@@ -24,6 +24,7 @@
 @import '../../vendor/bootstrap/less/forms.less'; //tk bs > 3
 */
 @import '../../vendor/bootstrap/less/bootstrap.less';
+//@import '../../vendor/bootswatch/cyborg/bootswatch.less';
 @import '../../vendor/font-awesome/less/font-awesome.less';
 /**
  * This is our main variables file. It in turn imports the `variables` file from
@@ -31,6 +32,7 @@
  * definitions in our imported stylesheets.
  */
 @import 'variables.less';
+//@import '../../vendor/bootswatch/cyborg/variables.less';
 //tk
 @import './navbar.less';
 
@@ -75,10 +77,11 @@ h2 {
   color: #666;
 }
 
+// https://github.com/wmluke/angular-flash/pull/23#issuecomment-29775334
 .fade {
   opacity: 0;
-  -webkit-transition: opacity 1.15s linear;
-  transition: opacity 1.15s linear;
+  -webkit-transition: all 1.15s linear;
+  transition: all 1.15s linear;
 }
 
 /**
