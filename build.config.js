@@ -21,6 +21,7 @@ module.exports = {
      */
     app_files: {
         js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
+        json: [ 'src/**/*.json' ],
         jsunit: [ 'src/**/*.spec.js' ],
 
         coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],

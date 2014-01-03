@@ -131,6 +131,16 @@ module.exports = function (grunt) {
                     }
                 ]
             },
+            build_appjson: {
+                files: [
+                    {
+                        src: [ '<%= app_files.json %>' ],
+                        dest: '<%= build_dir %>',
+                        cwd: '.',
+                        expand: true
+                    }
+                ]
+            },
             build_vendorjs: {
                 files: [
                     {
@@ -326,6 +336,15 @@ module.exports = function (grunt) {
          * the defaults here.
          */
         coffeelint: {
+            options: {
+                max_line_length: {
+                    value: 132,
+                    level: 'warn'
+                },
+                indentation: {
+                    level: 'ignore'
+                }
+            },
             src: {
                 files: {
                     src: [ '<%= app_files.coffee %>' ]
@@ -626,20 +645,17 @@ module.exports = function (grunt) {
      */
     grunt.registerTask('default', [ 'build', 'compile' ]);
 
+    grunt.registerTask('build-base', [
+        'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
+        'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
+        'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'copy:build_appjson'
+    ]);
+
     /**
      * The `build` task gets your app ready to run for development and testing.
      */
     grunt.registerTask('build', [
-        'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
-        'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
-        'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
-        'karma:continuous'
-    ]);
-
-    grunt.registerTask('qbuild', [
-        'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
-        'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
-        'copy:build_appjs', 'copy:build_vendorjs', 'index:build'
+        'build-base', 'karmaconfig', 'karma:continuous'
     ]);
 
     /**

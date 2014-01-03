@@ -9,7 +9,7 @@
             <th>description</th>
         </tr>
         <tr ng-repeat='recipe in recipes'>
-            <td>{{$index + 1}}</td>
+            <td><a ui-sref="recipes.show({id: $index + 1})">{{$index + 1}}</a></td>
             <td>{{recipe.title}}</td>
             <td>{{recipe.description}}</td>
         </tr>

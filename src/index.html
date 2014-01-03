@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 -->
-                <li ng-class="{ active: $state.includes('recipes') }"><a ui-sref="recipes">Recipes</a></li>
+                <li ng-class="{ active: $state.includes('recipes') }"><a ui-sref="recipes.index">Recipes</a></li>
                 <li ng-class="{ active: $state.includes('about') }"><a ui-sref="about">About</a></li>
                 <li>
                     <a href="https://github.com/tony-kerz/gut-hub-ui#readme">
@@ -99,7 +99,7 @@
 </div>
 
 <div class="container">
-    <div flash-alert active-class="in" class="alert fade">
+    <div flash-alert active-class="in alert" class="fade">
         <strong class="alert-heading">{{flash.type}}</strong>
         <span class="alert-message">{{flash.message}}</span>
     </div>

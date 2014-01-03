@@ -74,7 +74,7 @@ angular.module('gut-hub.recipes',
                 }
             });
 
-        $stateProvider.state('recipes.show',
+        $stateProvider.state('recipes.get',
             {
                 url: '/recipes/:id',
                 templateUrl: 'recipe/get.tpl.html',
