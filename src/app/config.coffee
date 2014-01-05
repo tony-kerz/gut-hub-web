@@ -9,7 +9,7 @@ angular.module('gut-hub')
   flashProvider.errorClassnames.push 'alert-danger'
 
 .config ($httpProvider)->
-  $httpProvider.interceptors.push ($location, $rootScope, $q)->
+  $httpProvider.interceptors.push ($rootScope, $q, $injector)->
     request: (config)->
       console.log "interceptor.request: config=%o", config
       config or $q.when config
@@ -24,4 +24,15 @@ angular.module('gut-hub')
 
     responseError: (rejection)->
       console.log "interceptor.responseError: rejection=%o", rejection
+      if rejection.status is 401
+        $rootScope.$broadcast 'event:unauthorized'
+
+        # tlk
+        # can't get $state injected directly into interceptor because of cyclical dependency
+        # so get $injector and call invoke() asking for $state (madness, i know)...
+        # ref: http://stackoverflow.com/a/19954545/2371903
+        #
+        $injector.invoke ($state)->
+          $state.go "about"
+
       $q.reject rejection
