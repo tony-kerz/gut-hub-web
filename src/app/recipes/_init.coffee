@@ -1,5 +1,5 @@
 angular.module 'gut-hub.recipes',
   [
-    'ui.router',
+    'ui.router'
     'ui.bootstrap'
   ]

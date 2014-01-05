@@ -340,10 +340,10 @@ module.exports = function (grunt) {
                 max_line_length: {
                     value: 132,
                     level: 'warn'
-                },
-                indentation: {
-                    level: 'ignore'
-                }
+                }//,
+ //               indentation: {
+ //                   level: 'ignore'
+ //               }
             },
             src: {
                 files: {

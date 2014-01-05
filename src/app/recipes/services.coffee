@@ -8,9 +8,9 @@ angular.module('gut-hub.recipes')
     index: ->
       $http.get("#{baseUrl}.json")
       #$http.get("#{baseUrl}/recipes.index.json")
-      .then (res)->
-        console.log "http-recipe-service.index: res=%o", res
-        res.data
+      .then (successResult)->
+        console.log "http-recipe-service.index: success-result=%o", successResult
+        successResult.data
 
     get: (id) ->
       $http.get("#{baseUrl}/#{id}.json")
