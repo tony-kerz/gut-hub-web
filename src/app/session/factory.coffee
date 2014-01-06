@@ -3,7 +3,7 @@ angular.module('gut-hub.session')
 .factory 'session', ($location, $http, $q, apiUrlRoot) ->
 
   login: (email, password) ->
-    $http.post("#{apiUrlRoot}/login"
+    $http.post("#{apiUrlRoot}/login",
       user:
         email: email
         password: password
@@ -21,7 +21,7 @@ angular.module('gut-hub.session')
       $location.path redirectTo
 
   register: (email, password, confirm_password) ->
-    $http.post("#{apiUrlRoot}/users.json"
+    $http.post("#{apiUrlRoot}/users.json",
       user:
         email: email
         password: password
