@@ -1,4 +1,4 @@
-angular.module('gut-hub.recipes')
+angular.module('gut-hub.recipe')
 
 .controller 'recipe-index-ctrl', ($scope, recipes) ->
   console.log 'recipe-index-ctrl: recipes=%o', recipes

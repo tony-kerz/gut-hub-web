@@ -1,4 +1,4 @@
-angular.module('gut-hub.recipes')
+angular.module('gut-hub.recipe')
 
 .factory 'httpRecipeService', ($http, apiUrlRoot) ->
 

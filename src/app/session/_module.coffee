@@ -1,4 +1,5 @@
-angular.module 'session',
+angular.module 'gut-hub.session',
   [
-    'constants'
+    'gut-hub.constants'
+    'ui.router'
   ]

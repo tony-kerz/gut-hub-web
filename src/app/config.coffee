@@ -33,6 +33,6 @@ angular.module('gut-hub')
         # ref: http://stackoverflow.com/a/19954545/2371903
         #
         $injector.invoke ($state)->
-          $state.go "about"
+          $state.go 'login'
 
       $q.reject rejection

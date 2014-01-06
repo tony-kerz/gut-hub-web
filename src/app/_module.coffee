@@ -6,6 +6,7 @@ angular.module 'gut-hub',
     'gut-hub.about'
     'gut-hub.home'
     'gut-hub.recipes'
+    'gut-hub.session'
     'angular-flash.service'
     'angular-flash.flash-alert-directive'
   ]

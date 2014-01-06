@@ -1,4 +1,4 @@
-angular.module('session')
+angular.module('gut-hub.session')
 
 .factory 'sessionService', ($location, $http, $q, apiUrlRoot) ->
 

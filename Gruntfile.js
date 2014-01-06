@@ -640,14 +640,14 @@ module.exports = function (grunt) {
             },
            build: {
                 dest: '<%= build_dir %>/src/app/constant.js',
-                name: 'constants',
+                name: '<%= pkg.name %>.constants',
                 constants: {
                     apiUrlRoot: 'http://localhost:3000'
                 }
             },
             compile: {
                 dest: '<%= build_dir %>/src/app/constant.js',
-                name: 'constants',
+                name: '<%= pkg.name %>.constants',
                 constants: {
                     apiUrlRoot: 'https://doh.com'
                 }
