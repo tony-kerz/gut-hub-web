@@ -639,14 +639,14 @@ module.exports = function (grunt) {
                 }
             },
            build: {
-                dest: '<%= build_dir %>/constants.js',
+                dest: '<%= build_dir %>/src/app/constant.js',
                 name: 'constants',
                 constants: {
                     apiUrlRoot: 'http://localhost:3000'
                 }
             },
             compile: {
-                dest: '<%= build_dir %>/constants.js',
+                dest: '<%= build_dir %>/src/app/constant.js',
                 name: 'constants',
                 constants: {
                     apiUrlRoot: 'https://doh.com'
@@ -673,7 +673,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [ 'build', 'compile' ]);
 
     grunt.registerTask('build-base', [
-        'clean', 'ngconstant', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
+        'clean', 'ngconstant:build', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
         'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'copy:build_appjson'
     ]);
@@ -690,7 +690,7 @@ module.exports = function (grunt) {
      * minifying your code.
      */
     grunt.registerTask('compile', [
-        'ngconstant', 'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+        'ngconstant:compile', 'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
     ]);
 
     /**

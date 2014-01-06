@@ -3,7 +3,7 @@ angular.module('gut-hub.recipes')
 .factory 'httpRecipeService', ($http, apiUrlRoot) ->
 
   #baseUrl = '/gut-hub-ui/build/src/app/recipes'
-  baseUrl = "#{apiUrlRoot}}/recipes'
+  baseUrl = "#{apiUrlRoot}/recipes"
 
   index: ->
     $http.get("#{baseUrl}.json")
