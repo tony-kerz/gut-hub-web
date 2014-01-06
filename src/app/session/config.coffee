@@ -7,5 +7,6 @@ angular.module('gut-hub.session')
     views:
       'main':
         templateUrl: 'session/login.tpl.html'
+        controller: 'login-ctrl'
     data:
       pageTitle: 'login'
