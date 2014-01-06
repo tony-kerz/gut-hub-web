@@ -32,6 +32,7 @@
         "grunt-bump": "0.0.6",
         "grunt-phonegap": "0.5.1",
         "protractor": "~0.12.1",
-        "grunt-protractor-runner": "~0.1.9"
+        "grunt-protractor-runner": "~0.1.9",
+        "grunt-ng-constant": "~0.4.7"
     }
 }

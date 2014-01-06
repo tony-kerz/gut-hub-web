@@ -21,6 +21,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-phonegap');
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-ng-constant');
 
     /**
      * Load in our build configuration file.
@@ -625,6 +626,32 @@ module.exports = function (grunt) {
                 //    return(pkg.name + '-' + pkg.version);
                 //}
             }
+        },
+
+        // tlk: http://stackoverflow.com/a/18343298/2371903
+        //
+        ngconstant: {
+            options: {
+                //coffee: true,
+                constants: {
+                    package: grunt.file.readJSON('package.json'),
+                    myGlobalConstant: 'myGlobalConstantValue'
+                }
+            },
+           build: {
+                dest: '<%= build_dir %>/constants.js',
+                name: 'constants',
+                constants: {
+                    apiUrlRoot: 'http://localhost:3000'
+                }
+            },
+            compile: {
+                dest: '<%= build_dir %>/constants.js',
+                name: 'constants',
+                constants: {
+                    apiUrlRoot: 'https://doh.com'
+                }
+            }
         }
     };
 
@@ -646,7 +673,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [ 'build', 'compile' ]);
 
     grunt.registerTask('build-base', [
-        'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
+        'clean', 'ngconstant', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
         'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'copy:build_appjson'
     ]);
@@ -663,7 +690,7 @@ module.exports = function (grunt) {
      * minifying your code.
      */
     grunt.registerTask('compile', [
-        'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+        'ngconstant', 'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
     ]);
 
     /**
