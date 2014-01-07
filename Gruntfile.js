@@ -634,7 +634,10 @@ module.exports = function (grunt) {
             options: {
                 //coffee: true,
                 constants: {
-                    package: grunt.file.readJSON('package.json'),
+                    package: {
+                        name: '<%= pkg.name %>',
+                        version: '<%= pkg.version %>'
+                    },
                     myGlobalConstant: 'myGlobalConstantValue'
                 }
             },

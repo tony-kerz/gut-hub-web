@@ -4,3 +4,8 @@ angular.module('gut-hub')
   .run ($rootScope, $state, $stateParams)->
     $rootScope.$state = $state
     $rootScope.$stateParams = $stateParams
+
+  .run ($http, apiUrlRoot)->
+    $http.get("#{apiUrlRoot}/dummy").then (response) ->
+      console.log "dummy: response=%o", response
+
