@@ -645,7 +645,10 @@ module.exports = function (grunt) {
                 dest: '<%= build_dir %>/src/app/constant.js',
                 name: '<%= pkg.name %>.constants',
                 constants: {
-                    apiUrlRoot: 'http://localhost:3000'
+                    env: {
+                      apiUrlRoot: 'http://localhost:3000',
+                      mimicNgCsrf: true
+                    }
                 }
             },
             compile: {

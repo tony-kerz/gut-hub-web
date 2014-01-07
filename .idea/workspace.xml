@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e67a80ca-a3e8-4763-968b-504d41dd6270" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/_module.coffee" afterPath="$PROJECT_DIR$/src/app/_module.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/config.coffee" afterPath="$PROJECT_DIR$/src/app/config.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/recipe/factory.coffee" afterPath="$PROJECT_DIR$/src/app/recipe/factory.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/session/factory.coffee" afterPath="$PROJECT_DIR$/src/app/session/factory.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/run.coffee" afterPath="$PROJECT_DIR$/src/app/run.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,19 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="constant.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="constant.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/src/app/constant.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="factory.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/src/app/session/factory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+            <state line="1" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.033407573" vertical-offset="0" max-vertical-offset="449">
               <folding />
             </state>
           </provider>
@@ -57,7 +52,7 @@
       <file leaf-file-name="factory.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/session/factory.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="39" selection-start="128" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+            <state line="3" column="29" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -66,7 +61,7 @@
       <file leaf-file-name="config.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/config.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="26" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+            <state line="13" column="100" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -75,10 +70,8 @@
       <file leaf-file-name="run.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/run.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="37" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding>
-                <marker date="1389072510000" expanded="true" signature="252:352" placeholder="..." />
-              </folding>
+            <state line="8" column="21" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,25 +88,25 @@
       <file leaf-file-name="factory.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/recipe/factory.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="450">
+            <state line="5" column="19" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_module.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/_module.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="3" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="638" column="49" selection-start="21168" selection-end="21168" vertical-scroll-proportion="0.43348625" vertical-offset="9381" max-vertical-offset="11550">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/session/login.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="37" selection-start="37" selection-end="37" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="657" column="49" selection-start="21848" selection-end="21848" vertical-scroll-proportion="0.0" vertical-offset="9516" max-vertical-offset="11595">
               <folding />
             </state>
           </provider>
@@ -175,14 +168,12 @@
         <option value="$PROJECT_DIR$/src/app/recipes/_module.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/session/states.coffee" />
-        <option value="$PROJECT_DIR$/src/app/config.coffee" />
         <option value="$PROJECT_DIR$/src/app/session/_module.coffee" />
         <option value="$PROJECT_DIR$/src/app/about/_module.coffee" />
         <option value="$PROJECT_DIR$/src/app/about/config.coffee" />
         <option value="$PROJECT_DIR$/src/app/about/controller.coffee" />
         <option value="$PROJECT_DIR$/src/app/recipe/_module.coffee" />
         <option value="$PROJECT_DIR$/src/app/recipe/controller.coffee" />
-        <option value="$PROJECT_DIR$/src/app/recipe/factory.coffee" />
         <option value="$PROJECT_DIR$/src/app/recipe/index.spec.js" />
         <option value="$PROJECT_DIR$/src/app/home/controller.coffee" />
         <option value="$PROJECT_DIR$/src/app/home/_module.coffee" />
@@ -190,14 +181,16 @@
         <option value="$PROJECT_DIR$/src/app/recipe/config.coffee" />
         <option value="$PROJECT_DIR$/src/app/session/config.coffee" />
         <option value="$PROJECT_DIR$/src/app/session/controller.coffee" />
-        <option value="$PROJECT_DIR$/src/app/_module.coffee" />
         <option value="$PROJECT_DIR$/src/less/main.less" />
         <option value="$PROJECT_DIR$/src/app/session/login.tpl.html" />
         <option value="$PROJECT_DIR$/src/app/app.less" />
-        <option value="$PROJECT_DIR$/src/app/session/factory.coffee" />
-        <option value="$PROJECT_DIR$/src/app/run.coffee" />
-        <option value="$PROJECT_DIR$/build/src/app/constant.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/src/app/run.coffee" />
+        <option value="$PROJECT_DIR$/src/app/session/factory.coffee" />
+        <option value="$PROJECT_DIR$/src/app/recipe/factory.coffee" />
+        <option value="$PROJECT_DIR$/src/app/_module.coffee" />
+        <option value="$PROJECT_DIR$/src/app/config.coffee" />
+        <option value="$PROJECT_DIR$/build/src/app/constant.js" />
       </list>
     </option>
   </component>
@@ -287,24 +280,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gut-hub-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gut-hub-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -316,10 +291,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gut-hub-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -458,7 +429,11 @@
       <created>1389047354439</created>
       <updated>1389047354439</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="thin constants, priming csrf call">
+      <created>1389099285976</created>
+      <updated>1389099285976</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -554,7 +529,8 @@
     <MESSAGE value="ng-constant&#10;" />
     <MESSAGE value="cut over to coffee, login form" />
     <MESSAGE value="cut over to coffee, login form&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="cut over to coffee, login form&#10;" />
+    <MESSAGE value="thin constants, priming csrf call" />
+    <option name="LAST_COMMIT_MESSAGE" value="thin constants, priming csrf call" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -769,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_module.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="19" selection-start="147" selection-end="147" vertical-scroll-proportion="0.14705883" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/about/about.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
@@ -832,20 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/src/app/session/factory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/recipe/factory.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/controller.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
@@ -853,39 +808,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/config.coffee">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="26" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/session/factory.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="39" selection-start="128" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+        <state line="657" column="49" selection-start="21848" selection-end="21848" vertical-scroll-proportion="0.0" vertical-offset="9516" max-vertical-offset="11595">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/run.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="37" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding>
-            <marker date="1389072510000" expanded="true" signature="252:352" placeholder="..." />
-          </folding>
+        <state line="8" column="21" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/session/factory.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="29" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/recipe/factory.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="19" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/_module.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="3" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/config.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="100" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="795">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/src/app/constant.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="638" column="49" selection-start="21168" selection-end="21168" vertical-scroll-proportion="0.43348625" vertical-offset="9381" max-vertical-offset="11550">
+        <state line="1" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.033407573" vertical-offset="0" max-vertical-offset="449">
           <folding />
         </state>
       </provider>

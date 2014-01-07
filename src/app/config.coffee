@@ -9,7 +9,17 @@ angular.module('gut-hub')
   flashProvider.errorClassnames.push 'alert-danger'
 
 .config ($httpProvider)->
-  $httpProvider.interceptors.push ($rootScope, $q, $injector)->
+#
+#  - trap 401 responses and redirect to login
+#  - mimic angular csrf behavior even when using cors in dev mode
+#
+#     per http://docs.angularjs.org/api/ng.$http
+#
+#     When performing XHR requests,
+#     the $http service reads a token from a cookie (by default, XSRF-TOKEN) and
+#     sets it as an HTTP header (X-XSRF-TOKEN).
+#
+  $httpProvider.interceptors.push ($rootScope, $q, $injector, env)->
     request: (config)->
       console.log "interceptor.request: config=%o", config
       config or $q.when config

@@ -1,6 +1,7 @@
 angular.module('gut-hub.session')
 
-.factory 'session', ($location, $http, $q, apiUrlRoot) ->
+.factory 'session', ($location, $http, $q, env) ->
+  apiUrlRoot = env.apiUrlRoot
 
   login: (email, password) ->
     $http.post("#{apiUrlRoot}/login",
