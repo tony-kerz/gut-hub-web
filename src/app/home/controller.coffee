@@ -1,3 +1,4 @@
 angular.module('gut-hub.home')
 
-.controller 'home-ctrl', ($scope) ->
+.controller 'home-ctrl',
+  ($scope) ->

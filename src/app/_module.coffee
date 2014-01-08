@@ -1,5 +1,6 @@
 angular.module 'gut-hub',
   [
+#    'ngCookies'
     'ui.router'
     'templates-app'
     'templates-common'
