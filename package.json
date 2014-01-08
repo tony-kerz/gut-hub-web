@@ -33,6 +33,7 @@
         "grunt-phonegap": "0.5.1",
         "protractor": "~0.12.1",
         "grunt-protractor-runner": "~0.1.9",
-        "grunt-ng-constant": "~0.4.7"
+        "grunt-ng-constant": "~0.4.7",
+        "grunt-connect-proxy": "~0.1.7"
     }
 }

@@ -22,6 +22,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-connect-proxy');
 
     /**
      * Load in our build configuration file.
@@ -586,8 +587,21 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9001,
-                    base: '../<%= pkg.name %>/build'
-                }
+                    base: '../<%= pkg.name %>-ui/build'
+                },
+                proxies: [
+                    {
+                        context: '/<%= pkg.name %>-api',
+                        host: 'localhost',
+                        port: 3000,
+                        https: false,
+                        changeOrigin: false,
+                        xforward: false,
+                        headers: {
+                            "x-custom-added-header": 'value'
+                        }
+                    }
+                ]
             }
         },
 
@@ -646,8 +660,7 @@ module.exports = function (grunt) {
                 name: '<%= pkg.name %>.constants',
                 constants: {
                     env: {
-                      apiUrlRoot: 'http://localhost:3000',
-                      mimicNgCsrf: true
+                      apiUrlRoot: 'http://localhost:9001'
                     }
                 }
             },
@@ -672,7 +685,7 @@ module.exports = function (grunt) {
      */
     grunt.renameTask('watch', 'delta');
     grunt.registerTask('watch', [ 'build', 'karma:unit', 'delta' ]);
-    grunt.registerTask('watch-base', [ 'build-base', 'delta' ]);
+    grunt.registerTask('watch-base', [ 'build-base', 'connect', 'delta' ]);
 
     /**
      * The default task is to build and compile.
