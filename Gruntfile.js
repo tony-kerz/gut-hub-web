@@ -1,3 +1,9 @@
+//var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
+//var mountFolder = function (connect, dir) {
+//    return connect.static(require('path').resolve(dir));
+//};
+//var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+
 module.exports = function (grunt) {
 
     /**
@@ -587,18 +593,27 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9001,
-                    base: '../<%= pkg.name %>-ui/build'
+                    hostname: 'localhost',
+                    base: '../<%= pkg.name %>-ui/build',
+                    middleware: function (connect, options) {
+                        var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
+                        return [
+                            // Include the proxy first
+                            proxy,
+                            // Serve static files.
+                            connect.static(options.base),
+                            // Make empty directories browsable.
+                            connect.directory(options.base)
+                        ];
+                    }
                 },
                 proxies: [
                     {
                         context: '/<%= pkg.name %>-api',
                         host: 'localhost',
                         port: 3000,
-                        https: false,
-                        changeOrigin: false,
-                        xforward: false,
-                        headers: {
-                            "x-custom-added-header": 'value'
+                        rewrite: {
+                            '^/gut-hub-api': ''
                         }
                     }
                 ]
@@ -660,7 +675,7 @@ module.exports = function (grunt) {
                 name: '<%= pkg.name %>.constants',
                 constants: {
                     env: {
-                      apiUrlRoot: 'http://localhost:9001'
+                      apiUrlRoot: 'http://localhost:9001/<%= pkg.name %>-api'
                     }
                 }
             },
@@ -685,7 +700,7 @@ module.exports = function (grunt) {
      */
     grunt.renameTask('watch', 'delta');
     grunt.registerTask('watch', [ 'build', 'karma:unit', 'delta' ]);
-    grunt.registerTask('watch-base', [ 'build-base', 'connect', 'delta' ]);
+    grunt.registerTask('watch-base', [ 'build-base', 'configureProxies:server', 'connect', 'delta' ]);
 
     /**
      * The default task is to build and compile.
