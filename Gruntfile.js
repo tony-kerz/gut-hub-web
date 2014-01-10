@@ -613,6 +613,8 @@ module.exports = function (grunt) {
                         host: 'localhost',
                         port: 3000,
                         rewrite: {
+                            //'^/<%= pkg.name %>-api': ''
+                            // for some reason <%= pkg.name %> isn't being resolved here so had to call out literal...
                             '^/gut-hub-api': ''
                         }
                     }
