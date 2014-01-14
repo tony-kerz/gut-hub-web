@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e67a80ca-a3e8-4763-968b-504d41dd6270" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/appControl.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/session/sessionFactory.coffee" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/controller.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/session/factory.coffee" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/_module.coffee" afterPath="$PROJECT_DIR$/src/app/_app.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/about/_module.coffee" afterPath="$PROJECT_DIR$/src/app/about/_about.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/about/config.coffee" afterPath="$PROJECT_DIR$/src/app/about/aboutConfig.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/about/controller.coffee" afterPath="$PROJECT_DIR$/src/app/about/aboutControl.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/config.coffee" afterPath="$PROJECT_DIR$/src/app/appConfig.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/home/_module.coffee" afterPath="$PROJECT_DIR$/src/app/home/_home.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/home/config.coffee" afterPath="$PROJECT_DIR$/src/app/home/homeConfig.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/home/controller.coffee" afterPath="$PROJECT_DIR$/src/app/home/homeControl.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/recipe/_module.coffee" afterPath="$PROJECT_DIR$/src/app/recipe/_recipe.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/recipe/config.coffee" afterPath="$PROJECT_DIR$/src/app/recipe/recipeConfig.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/recipe/controller.coffee" afterPath="$PROJECT_DIR$/src/app/recipe/recipeControl.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/recipe/factory.coffee" afterPath="$PROJECT_DIR$/src/app/recipe/recipeFactory.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/run.coffee" afterPath="$PROJECT_DIR$/src/app/appRun.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/session/_module.coffee" afterPath="$PROJECT_DIR$/src/app/session/_session.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/session/config.coffee" afterPath="$PROJECT_DIR$/src/app/session/sessionConfig.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/session/controller.coffee" afterPath="$PROJECT_DIR$/src/app/session/sessionControl.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.spec.js" afterPath="$PROJECT_DIR$/src/app/app.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.config.js" afterPath="$PROJECT_DIR$/build.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.spec.js" afterPath="$PROJECT_DIR$/src/app/home/home.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/recipe/index.spec.js" afterPath="$PROJECT_DIR$/src/app/recipe/index.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/session/login.tpl.html" afterPath="$PROJECT_DIR$/src/app/session/login.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/appRun.coffee" afterPath="$PROJECT_DIR$/src/app/appRun.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/session/sessionFactory.coffee" afterPath="$PROJECT_DIR$/src/app/session/sessionFactory.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ng-boilerplate.iws" />
@@ -54,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="4542" selection-end="4542" vertical-scroll-proportion="0.5641593" vertical-offset="1425" max-vertical-offset="2340">
+            <state line="112" column="0" selection-start="4542" selection-end="4542" vertical-scroll-proportion="-33.75" vertical-offset="870" max-vertical-offset="2340">
               <folding />
             </state>
           </provider>
@@ -66,17 +39,37 @@
       <file leaf-file-name="appControl.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/appControl.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="29" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="20" column="123" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessionFactory.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sessionFactory.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/session/sessionFactory.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="62" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="810">
+            <state line="34" column="46" selection-start="984" selection-end="984" vertical-scroll-proportion="0.60126585" vertical-offset="225" max-vertical-offset="945">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipeFactory.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/recipe/recipeFactory.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="26" selection-start="186" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appRun.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/appRun.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="37" selection-start="2203" selection-end="2203" vertical-scroll-proportion="0.0" vertical-offset="334" max-vertical-offset="765">
+              <folding>
+                <marker date="1389707589000" expanded="true" signature="2081:2201" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/app/session/sessionControl.coffee" />
         <option value="$PROJECT_DIR$/src/app/_gutHub.coffee" />
         <option value="$PROJECT_DIR$/src/app/config.coffee" />
-        <option value="$PROJECT_DIR$/src/app/appRun.coffee" />
         <option value="$PROJECT_DIR$/src/app/app.spec.js" />
         <option value="$PROJECT_DIR$/src/less/main.less" />
         <option value="$PROJECT_DIR$/src/app/recipe/index.spec.js" />
@@ -157,9 +149,10 @@
         <option value="$PROJECT_DIR$/src/app/recipe/_recipe.coffee" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/build/src/app/appConfig.js" />
-        <option value="$PROJECT_DIR$/src/app/session/sessionFactory.coffee" />
         <option value="$PROJECT_DIR$/src/app/appControl.coffee" />
         <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/appRun.coffee" />
+        <option value="$PROJECT_DIR$/src/app/session/sessionFactory.coffee" />
       </list>
     </option>
   </component>
@@ -268,28 +261,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gut-hub-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gut-hub-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="session" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,7 +415,11 @@
       <created>1389326067226</created>
       <updated>1389326067226</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="naming refactoring, state mgmt">
+      <created>1389676120259</created>
+      <updated>1389676120259</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -471,22 +446,22 @@
     <frame x="0" y="22" width="1440" height="808" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32258064" sideWeight="0.49785408" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4045699" sideWeight="0.49785408" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36155915" sideWeight="0.49928468" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32345015" sideWeight="0.49785408" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40431267" sideWeight="0.49785408" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36155915" sideWeight="0.49928468" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5431267" sideWeight="0.50214595" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896653" sideWeight="0.4996369" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892704" sideWeight="0.3227991" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24892704" sideWeight="0.6772009" order="0" side_tool="true" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5431267" sideWeight="0.50214595" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896653" sideWeight="0.4996369" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -544,7 +519,8 @@
     <MESSAGE value="env constant, csrf mimic in dev for cors&#10;" />
     <MESSAGE value="reroute to original target after auth" />
     <MESSAGE value="reverse proxy to rails&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="reverse proxy to rails&#10;" />
+    <MESSAGE value="naming refactoring, state mgmt" />
+    <option name="LAST_COMMIT_MESSAGE" value="naming refactoring, state mgmt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -704,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/recipe/recipeFactory.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/session/login.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="37" selection-start="29" selection-end="37" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
@@ -742,13 +711,6 @@
     <entry file="file://$PROJECT_DIR$/src/app/app.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="40" selection-start="334" selection-end="334" vertical-scroll-proportion="0.3470437" vertical-offset="0" max-vertical-offset="389">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/appRun.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="48" selection-start="294" selection-end="294" vertical-scroll-proportion="0.26119402" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
@@ -1029,23 +991,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/session/sessionFactory.coffee">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="62" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="810">
+        <state line="112" column="0" selection-start="4542" selection-end="4542" vertical-scroll-proportion="-33.75" vertical-offset="870" max-vertical-offset="2340">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/appControl.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+        <state line="20" column="123" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/app/recipe/recipeFactory.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="4542" selection-end="4542" vertical-scroll-proportion="0.5641593" vertical-offset="1425" max-vertical-offset="2340">
+        <state line="10" column="26" selection-start="186" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/appRun.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="37" selection-start="2203" selection-end="2203" vertical-scroll-proportion="0.0" vertical-offset="334" max-vertical-offset="765">
+          <folding>
+            <marker date="1389707589000" expanded="true" signature="2081:2201" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/session/sessionFactory.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="46" selection-start="984" selection-end="984" vertical-scroll-proportion="0.60126585" vertical-offset="225" max-vertical-offset="945">
           <folding />
         </state>
       </provider>

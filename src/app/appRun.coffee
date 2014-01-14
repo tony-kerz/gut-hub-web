@@ -35,7 +35,11 @@ angular.module('gutHub')
     console.log "$stateChangeError: event=%o, toState=%o, toParams=%o, fromState=%o, fromParams=%o, error=%o", event, toState, toParams, fromState, fromParams, error
     flash.error = "encountered error-code=[#{error.status}] attempting to change from state=[#{fromState.name}] to state=[#{toState.name}]"
 
-.run ($http, env) ->
-  $http.get("#{env.apiUrlRoot}/dummy").then (response) ->
-    console.log "dummy: response=%o", response
+#.run ($http, env) ->
+#  $http.get("#{env.apiUrlRoot}/dummy").then (response) ->
+#    console.log "dummy: response=%o", response
+
+.run (session) ->
+  session.checkCurrentUser().then (resolution) ->
+    console.log "app.run: check-current-user: resolution=%o", resolution
 

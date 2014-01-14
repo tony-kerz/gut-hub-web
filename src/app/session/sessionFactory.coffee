@@ -6,24 +6,33 @@ angular.module('gutHub.session')
 
     state = {}
 
-    state: state
+    service =
+      state: state
 
-    login: (email, password) ->
-      $http.post("#{apiUrlRoot}/login",
-        user:
-          email: email
-          password: password
-      ).then (resolution) ->
-        console.log "session.login: resolution=%o", resolution
-        state.currentUser = resolution.data.user
+      login: (email, password) ->
+        $http.post("#{apiUrlRoot}/login",
+          user:
+            email: email
+            password: password
+        ).then (resolution) ->
+          console.log "session.login: resolution=%o", resolution
+          state.currentUser = resolution.data.user
 
-    logout: ->
-      $http.post("#{apiUrlRoot}/logout").then (resolution) ->
-        console.log "session.logout: resolution=%o", resolution
-        state.currentUser = null
+      logout: ->
+        $http.post("#{apiUrlRoot}/logout").then (resolution) ->
+          console.log "session.logout: resolution=%o", resolution
+          state.currentUser = null
 
-    currentUserId: ->
-      state.currentUser?.email
+      currentUser: ->
+        state.currentUser
+
+      currentUserId: ->
+        service.currentUser()?.email
+
+      checkCurrentUser: ->
+        $http.get("#{apiUrlRoot}/current_user.json").then (resolution)->
+          console.log "session.check-current-user: resolution=%o", resolution
+          state.currentUser = resolution.data.user
 
 ###
     isAuthenticated: ->
