@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="gut-hub" ng-controller="app-ctrl">
+<html ng-app="gutHub" ng-controller="appControl">
 <head>
     <title ng-bind="pageTitle"></title>
 
@@ -92,6 +92,12 @@
                         <i class="fa fa-comments"></i>
                         Support
                     </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="pull-right">
+                    <a ng-if="currentUserId()" ng-click="logout()">logout [{{currentUserId()}}]</a>
+                    <a ng-if="!currentUserId()" ui-sref="login">login</a>
                 </li>
             </ul>
         </div>

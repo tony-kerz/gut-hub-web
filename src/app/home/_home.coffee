@@ -13,7 +13,7 @@
   specified, as shown below.
 ###
 
-angular.module 'gut-hub.home',
+angular.module 'gutHub.home',
   [
     'ui.router'
     'plusOne'

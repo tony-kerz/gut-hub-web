@@ -1,4 +1,4 @@
-angular.module('gut-hub')
+angular.module('gutHub')
 
 .config ($urlRouterProvider) ->
   # default to '/home'...

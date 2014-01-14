@@ -5,7 +5,7 @@
  * automatically.
  */
 describe( 'recipes', function() {
-  beforeEach( module( 'gut-hub.recipe' ) );
+  beforeEach( module( 'gutHub.recipe' ) );
 
   it( 'should have a dummy test', inject( function() {
     expect( true ).toBeTruthy();

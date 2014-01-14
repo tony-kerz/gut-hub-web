@@ -1,4 +1,4 @@
-angular.module('gut-hub.about')
+angular.module('gutHub.about')
 
 .config ($stateProvider) ->
 
@@ -6,7 +6,7 @@ angular.module('gut-hub.about')
     url: '/about'
     views:
       'main':
-        controller: 'about-ctrl'
+        controller: 'aboutControl'
         templateUrl: 'about/about.tpl.html'
     data:
       pageTitle: 'what is it?'

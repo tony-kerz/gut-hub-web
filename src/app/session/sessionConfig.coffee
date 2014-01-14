@@ -1,4 +1,4 @@
-angular.module('gut-hub.session')
+angular.module('gutHub.session')
 
 .config ($stateProvider) ->
 
@@ -7,6 +7,6 @@ angular.module('gut-hub.session')
     views:
       'main':
         templateUrl: 'session/login.tpl.html'
-        controller: 'login-ctrl'
+        controller: 'loginControl'
     data:
       pageTitle: 'login'

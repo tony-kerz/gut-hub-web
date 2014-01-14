@@ -349,9 +349,9 @@ module.exports = function (grunt) {
                     value: 132,
                     level: 'warn'
                 }//,
- //               indentation: {
- //                   level: 'ignore'
- //               }
+                //               indentation: {
+                //                   level: 'ignore'
+                //               }
             },
             src: {
                 files: {
@@ -594,7 +594,8 @@ module.exports = function (grunt) {
                 options: {
                     port: 9001,
                     hostname: 'localhost',
-                    base: '../<%= pkg.name %>-ui/build',
+                    //base: '../<%= pkg.name %>-ui/build',
+                    base: '../gut-hub-ui/build',
                     middleware: function (connect, options) {
                         var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
                         return [
@@ -615,7 +616,7 @@ module.exports = function (grunt) {
                         rewrite: {
                             //'^/<%= pkg.name %>-api': ''
                             // for some reason <%= pkg.name %> isn't being resolved here so had to call out literal...
-                            '^/gut-hub-api': ''
+                            '^/gutHub-api': ''
                         }
                     }
                 ]
@@ -672,20 +673,22 @@ module.exports = function (grunt) {
                     myGlobalConstant: 'myGlobalConstantValue'
                 }
             },
-           build: {
-                dest: '<%= build_dir %>/src/app/constant.js',
-                name: '<%= pkg.name %>.constants',
+            build: {
+                dest: '<%= build_dir %>/src/app/appConstant.js',
+                name: '<%= pkg.name %>.constant',
                 constants: {
                     env: {
-                      apiUrlRoot: 'http://localhost:9001/<%= pkg.name %>-api'
+                        apiUrlRoot: 'http://localhost:9001/<%= pkg.name %>-api'
                     }
                 }
             },
             compile: {
-                dest: '<%= build_dir %>/src/app/constant.js',
-                name: '<%= pkg.name %>.constants',
+                dest: '<%= build_dir %>/src/app/appConstant.js',
+                name: '<%= pkg.name %>.constant',
                 constants: {
-                    apiUrlRoot: 'https://doh.com'
+                    env: {
+                        apiUrlRoot: 'https://doh.com'
+                    }
                 }
             }
         }

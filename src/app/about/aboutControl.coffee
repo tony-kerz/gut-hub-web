@@ -1,6 +1,6 @@
-angular.module('gut-hub.about')
+angular.module('gutHub.about')
 
-.controller 'about-ctrl',
+.controller 'aboutControl',
   ($scope) ->
     $scope.dropdownDemoItems =
       [

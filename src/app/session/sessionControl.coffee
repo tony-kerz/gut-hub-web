@@ -1,12 +1,12 @@
-angular.module('gut-hub.session')
+angular.module('gutHub.session')
 
-.controller 'login-ctrl',
+.controller 'loginControl',
   ($scope, session, flash, $rootScope, $state) ->
     $scope.login = (user) ->
       console.log 'login-ctrl: user=%o', user
       session.login(user.email, user.password).then(
         (resolution) ->
-          console.log "login-then: resolution=%o", resolution
+          console.log "login-then: resolution=%o, session=%o", resolution, session
 
           toState = $rootScope.toState
           if toState

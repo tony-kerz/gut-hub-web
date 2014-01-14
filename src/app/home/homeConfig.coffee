@@ -4,7 +4,7 @@
   this way makes each module more "self-contained".
 ###
 
-angular.module('gut-hub.home')
+angular.module('gutHub.home')
 
 .config ($stateProvider) ->
 
@@ -12,7 +12,7 @@ angular.module('gut-hub.home')
     url: '/home'
     views:
       'main':
-        controller: 'home-ctrl'
+        controller: 'homeControl'
         templateUrl: 'home/home.tpl.html'
     data:
       pageTitle: 'home'

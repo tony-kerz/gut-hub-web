@@ -73,7 +73,8 @@ module.exports = {
             'vendor/bootstrap/dist/js/bootstrap.js',
             //'vendor/bootstrap/js/collapse.js',
             //'vendor/bootstrap/js/transition.js'
-            'vendor/angular-flash/dist/angular-flash.js'
+            'vendor/angular-flash/dist/angular-flash.js',
+            'vendor/lodash/dist/lodash.min.js'
         ],
         css: [
         ],

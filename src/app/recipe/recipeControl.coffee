@@ -1,11 +1,13 @@
-angular.module('gut-hub.recipe')
+angular.module('gutHub.recipe')
 
-.controller 'recipe-index-ctrl',
-  ($scope, recipes) ->
+.controller 'recipeIndexControl',
+  ($scope, recipes, session) ->
     console.log 'recipe-index-ctrl: recipes=%o', recipes
     $scope.recipes = recipes
+    #cu = session.currentUser()
+    #cu.email = 'jerked'
 
-.controller 'recipe-get-ctrl',
+.controller 'recipeGetControl',
   ($scope, recipe) ->
     console.log 'recipe-get-ctrl: recipe=%o', recipe
     $scope.recipe = recipe

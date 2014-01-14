@@ -1,14 +1,14 @@
-angular.module 'gut-hub',
+angular.module 'gutHub',
   [
 #    'ngCookies'
     'ui.router'
     'templates-app'
     'templates-common'
-    'gut-hub.about'
-    'gut-hub.home'
-    'gut-hub.recipe'
-    'gut-hub.session'
-    'gut-hub.constants'
+    'gutHub.about'
+    'gutHub.home'
+    'gutHub.recipe'
+    'gutHub.session'
+    'gutHub.constant'
     'angular-flash.service'
     'angular-flash.flash-alert-directive'
   ]

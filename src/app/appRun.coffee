@@ -1,9 +1,11 @@
-angular.module('gut-hub')
+angular.module('gutHub')
 
 # https://github.com/angular-ui/ui-router/blob/master/sample/module.js
-.run ($rootScope, $state, $stateParams, flash) ->
+.run ($rootScope, $state, $stateParams, session, flash) ->
   $rootScope.$state = $state
   $rootScope.$stateParams = $stateParams
+  #$rootScope.currentUser = null
+  #$rootScope.defaultState = 'home'
 
   $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     console.log "$stateChangeStart: event=%o, toState=%o, toParams=%o, fromState=%o, fromParams=%o", event, toState, toParams, fromState, fromParams

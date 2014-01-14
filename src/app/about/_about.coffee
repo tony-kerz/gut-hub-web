@@ -1,4 +1,4 @@
-angular.module 'gut-hub.about',
+angular.module 'gutHub.about',
   [
     'ui.router'
     'ui.bootstrap'

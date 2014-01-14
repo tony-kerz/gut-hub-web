@@ -1,4 +1,4 @@
-angular.module('gut-hub.recipe')
+angular.module('gutHub.recipe')
 
 .config ($stateProvider) ->
 
@@ -14,7 +14,7 @@ angular.module('gut-hub.recipe')
   $stateProvider.state 'recipes.index',
     url: ''
     templateUrl: 'recipe/index.tpl.html'
-    controller: 'recipe-index-ctrl'
+    controller: 'recipeIndexControl'
     resolve:
       recipes: (httpRecipeService) ->
         console.log "state: recipes.index..."
@@ -23,7 +23,7 @@ angular.module('gut-hub.recipe')
   $stateProvider.state 'recipes.show',
     url: '/:id'
     templateUrl: 'recipe/get.tpl.html'
-    controller: 'recipe-get-ctrl'
+    controller: 'recipeGetControl'
     resolve:
       recipe: (httpRecipeService, $stateParams) ->
         console.log "state: recipes.show: state-params=%o", $stateParams
