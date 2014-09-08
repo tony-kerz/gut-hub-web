@@ -64,17 +64,17 @@ module.exports = {
     vendor_files: {
         js: [
             'vendor/angular/angular.js',
-            'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',//tk
-            'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
+            'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+            'vendor/bower-angular-placeholders/angular-placeholders.js',
             'vendor/angular-ui-router/release/angular-ui-router.js',
             'vendor/angular-ui-utils/modules/route/route.js',
             // tk
-            'vendor/jquery/jquery.js',
+            'vendor/jquery/dist/jquery.js',
             'vendor/bootstrap/dist/js/bootstrap.js',
             //'vendor/bootstrap/js/collapse.js',
             //'vendor/bootstrap/js/transition.js'
             'vendor/angular-flash/dist/angular-flash.js',
-            'vendor/lodash/dist/lodash.min.js'
+            'vendor/lodash/dist/lodash.js'
         ],
         css: [
         ],

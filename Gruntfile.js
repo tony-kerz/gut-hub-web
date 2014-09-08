@@ -20,9 +20,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-conventional-changelog');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-coffeelint');
-    grunt.loadNpmTasks('grunt-recess');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-ngmin');
+    grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-phonegap');
     grunt.loadNpmTasks('grunt-protractor-runner');
@@ -192,9 +192,9 @@ module.exports = function (grunt) {
             build_css: {
                 src: [
                     '<%= vendor_files.css %>',
-                    '<%= recess.build.dest %>'
+                    '<%= less.build.dest %>'
                 ],
-                dest: '<%= recess.build.dest %>'
+                dest: '<%= less.build.dest %>'
             },
             /**
              * The `compile_js` target is the concatenation of our application source
@@ -240,7 +240,7 @@ module.exports = function (grunt) {
          * `ng-min` annotates the sources before minifying. That is, it allows us
          * to code without the array syntax.
          */
-        ngmin: {
+        ngAnnotate: {
             compile: {
                 files: [
                     {
@@ -272,7 +272,7 @@ module.exports = function (grunt) {
          * Only our `main.less` file is included in compilation; all other files
          * must be imported from this file.
          */
-        recess: {
+        less: {
             build: {
                 src: [ '<%= app_files.less %>' ],
                 dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css',
@@ -296,8 +296,8 @@ module.exports = function (grunt) {
                 }
             },
             compile: {
-                src: [ '<%= recess.build.dest %>' ],
-                dest: '<%= recess.build.dest %>',
+                src: [ '<%= less.build.dest %>' ],
+                dest: '<%= less.build.dest %>',
                 options: {
                     compile: true,
                     compress: true,
@@ -431,7 +431,7 @@ module.exports = function (grunt) {
                     '<%= html2js.common.dest %>',
                     '<%= html2js.app.dest %>',
                     '<%= vendor_files.css %>',
-                    '<%= recess.build.dest %>'
+                    '<%= less.build.dest %>'
                 ]
             },
 
@@ -445,7 +445,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= concat.compile_js.dest %>',
                     '<%= vendor_files.css %>',
-                    '<%= recess.compile.dest %>'
+                    '<%= less.compile.dest %>'
                 ]
             }
         },
@@ -556,7 +556,7 @@ module.exports = function (grunt) {
              */
             less: {
                 files: [ 'src/**/*.less' ],
-                tasks: [ 'recess:build' ]
+                tasks: [ 'less:build' ]
             },
 
             /**
@@ -592,32 +592,28 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    port: 9001,
+                    port: 9000,
                     hostname: 'localhost',
-                    //base: '../<%= pkg.name %>-ui/build',
-                    base: '../gut-hub-ui/build',
+                    base: 'build',
                     middleware: function (connect, options) {
                         var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
+                        console.log("middleware: options=%o", options);
                         return [
                             // Include the proxy first
                             proxy,
                             // Serve static files.
-                            connect.static(options.base),
+                            connect.static(options.base[0])
                             // Make empty directories browsable.
-                            connect.directory(options.base)
+                            //connect.directory(options.base)
                         ];
-                    }
+                    },
+                    debug: true
                 },
                 proxies: [
                     {
-                        context: '/<%= pkg.name %>-api',
+                        context: '/api',
                         host: 'localhost',
-                        port: 3000,
-                        rewrite: {
-                            //'^/<%= pkg.name %>-api': ''
-                            // for some reason <%= pkg.name %> isn't being resolved here so had to call out literal...
-                            '^/gutHub-api': ''
-                        }
+                        port: 3000
                     }
                 ]
             }
@@ -665,6 +661,8 @@ module.exports = function (grunt) {
         ngconstant: {
             options: {
                 //coffee: true,
+                dest: '<%= build_dir %>/src/app/appConstant.js',
+                name: '<%= pkg.name %>.constant',
                 constants: {
                     package: {
                         name: '<%= pkg.name %>',
@@ -674,17 +672,13 @@ module.exports = function (grunt) {
                 }
             },
             build: {
-                dest: '<%= build_dir %>/src/app/appConstant.js',
-                name: '<%= pkg.name %>.constant',
                 constants: {
                     env: {
-                        apiUrlRoot: 'http://localhost:9001/<%= pkg.name %>-api'
+                        apiUrlRoot: 'http://localhost:9000/api'
                     }
                 }
             },
             compile: {
-                dest: '<%= build_dir %>/src/app/appConstant.js',
-                name: '<%= pkg.name %>.constant',
                 constants: {
                     env: {
                         apiUrlRoot: 'https://doh.com'
@@ -706,6 +700,7 @@ module.exports = function (grunt) {
     grunt.renameTask('watch', 'delta');
     grunt.registerTask('watch', [ 'build', 'karma:unit', 'delta' ]);
     grunt.registerTask('watch-base', [ 'build-base', 'configureProxies:server', 'connect', 'delta' ]);
+    //grunt.registerTask('watch-base', [ 'build-base', 'configureProxies:server', 'connect']);
 
     /**
      * The default task is to build and compile.
@@ -713,7 +708,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [ 'build', 'compile' ]);
 
     grunt.registerTask('build-base', [
-        'clean', 'ngconstant:build', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
+        'clean', 'ngconstant:build', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
         'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'copy:build_appjson'
     ]);
@@ -730,7 +725,7 @@ module.exports = function (grunt) {
      * minifying your code.
      */
     grunt.registerTask('compile', [
-        'ngconstant:compile', 'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+        'ngconstant:compile', 'less:compile', 'copy:compile_assets', 'ngAnnotate', 'concat:compile_js', 'uglify', 'index:compile'
     ]);
 
     /**
