@@ -1,8 +1,8 @@
 angular.module('gutHub.session')
 
 .factory 'session',
-  ($location, $http, $q, env) ->
-    apiUrlRoot = env.apiUrlRoot
+  ($location, $http, $q) ->
+    baseUrl = '/sessions'
 
     state = {}
 
@@ -10,7 +10,7 @@ angular.module('gutHub.session')
       state: state
 
       login: (email, password) ->
-        $http.post("#{apiUrlRoot}/sessions",
+        $http.post("#{baseUrl}",
           user:
             email: email
             password: password
@@ -19,7 +19,7 @@ angular.module('gutHub.session')
           state.currentUser = resolution.data.user
 
       logout: ->
-        $http.delete("#{apiUrlRoot}/sessions").then (resolution) ->
+        $http.delete("#{baseUrl}").then (resolution) ->
           console.log "session.logout: resolution=%o", resolution
           state.currentUser = null
 
@@ -30,7 +30,7 @@ angular.module('gutHub.session')
         service.currentUser()?.email
 
       checkCurrentUser: ->
-        $http.get("#{apiUrlRoot}/sessions/current").then (resolution)->
+        $http.get("#{baseUrl}/current").then (resolution)->
           console.log "session.check-current-user: resolution=%o", resolution
           state.currentUser = resolution.data.user
 

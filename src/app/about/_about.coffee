@@ -1,6 +1,6 @@
 angular.module 'gutHub.about',
   [
     'ui.router'
-    'ui.bootstrap'
+    'mgcrea.ngStrap'
     'placeholders'
   ]

@@ -19,7 +19,7 @@ angular.module('gutHub')
 #     the $http service reads a token from a cookie (by default, XSRF-TOKEN) and
 #     sets it as an HTTP header (X-XSRF-TOKEN).
 #
-  $httpProvider.interceptors.push ($rootScope, $q, $injector, env) ->
+  $httpProvider.interceptors.push ($rootScope, $q, $injector) ->
     request: (config) ->
       console.log "interceptor.request: config=%o", config
 
