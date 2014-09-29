@@ -1,12 +1,5 @@
 gulp = require 'gulp'
-less = require 'gulp-less'
-rev = require 'gulp-rev'
-gulpIf = require 'gulp-if'
-server = require 'gulp-webserver'
-inject = require 'gulp-inject'
-coffee = require 'gulp-coffee'
-util = require 'gulp-util'
-debug = require 'gulp-debug'
+plug = require('gulp-load-plugins')()
 bower = require 'main-bower-files'
 run = require 'run-sequence'
 del = require 'del'
@@ -16,18 +9,19 @@ optimize = false
 
 gulp.task 'coffee', () ->
   gulp.src 'src/**/*.coffee'
-    .pipe coffee().on 'error', util.log
+    .pipe plug.coffee().on 'error', plug.util.log
+    .pipe plug.if(optimize, plug.ngAnnotate())
     .pipe gulp.dest 'build'
 
 gulp.task 'less', () ->
   gulp.src 'src/less/main.less'
-  .pipe less()
-  .pipe gulpIf(optimize, rev())
+  .pipe plug.less()
+  .pipe plug.if(optimize, plug.rev())
   .pipe gulp.dest('build/assets')
 
 gulp.task 'bower', () ->
   gulp.src bower(), read: true, base: 'bower_components'
-  .pipe debug()
+  #.pipe plug.debug()
   .pipe gulp.dest 'build/vendor'
 
 gulp.task 'index', () ->
@@ -35,18 +29,24 @@ gulp.task 'index', () ->
   bower_sources = gulp.src ['build/vendor/**/*.js', 'build/vendor/**/*.css'], read: false
 
   gulp.src 'src/index.html'
-  .pipe inject sources, ignorePath: 'build'
-  .pipe inject bower_sources, ignorePath: 'build', name: 'bower'
+  .pipe plug.inject sources, ignorePath: 'build'
+  .pipe plug.inject bower_sources, ignorePath: 'build', name: 'bower'
+  .pipe gulp.dest 'build'
+
+gulp.task 'template', () ->
+  gulp.src ['src/app/**/*.tpl.html']
+  .pipe plug.angularTemplatecache standalone: true
   .pipe gulp.dest 'build'
 
 gulp.task 'watch', () ->
   gulp.watch 'src/**/*.less', ['less']
   gulp.watch 'src/**/*.coffee', ['coffee']
   gulp.watch 'src/index.html', ['index']
+  gulp.watch 'src/**/*.tpl.html', ['template']
 
 gulp.task 'server', () ->
   gulp.src 'build'
-    .pipe server(
+    .pipe plug.webserver(
       livereload: true
       directoryListing: false
       open: true
@@ -56,7 +56,7 @@ gulp.task 'clean', (cb) ->
   del ['build'], cb
 
 gulp.task 'build', (cb) ->
-  run('clean', 'less', 'coffee', 'bower', 'index', cb)
+  run('clean', 'less', 'coffee', 'bower', 'template', 'index', cb)
 
 gulp.task 'compile', () ->
   optimize = true
