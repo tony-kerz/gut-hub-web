@@ -5,18 +5,17 @@ bower = require 'main-bower-files'
 run = require 'run-sequence'
 del = require 'del'
 lazy = require 'lazypipe'
+merge = require 'merge-stream'
 
 optJsStream = lazy()
   .pipe plug.concat, 'all.min.js'
+  .pipe plug.rev
   .pipe plug.uglify
 
 optCssStream = lazy()
   .pipe plug.concat, 'all.min.css'
+  .pipe plug.rev
   .pipe plug.minifyCss
-
-optFontStream = lazy()
-  .pipe plug.flatten
-  .pipe gulp.dest, 'build/fonts'
 
 gulp.task 'coffee', ->
   gulp.src 'src/**/*.coffee'
@@ -28,24 +27,22 @@ gulp.task 'coffee', ->
 gulp.task 'less', ->
   gulp.src 'src/less/main.less'
   .pipe plug.less()
-  .pipe plug.if argv.optimize, plug.rev()
+  .pipe plug.if argv.optimize, optCssStream()
   .pipe gulp.dest 'build/assets'
 
-gulp.task 'bower-js', ->
-  gulp.src bower(filter: new RegExp '^.*\.js$'), base: 'bower_components'
-  .pipe plug.if argv.optimize, optJsStream()
-  .pipe gulp.dest 'build/vendor'
+gulp.task 'bower', ->
 
-gulp.task 'bower-css', ->
-  gulp.src bower(filter: new RegExp '^.*\.css$'), base: 'bower_components'
-  .pipe plug.if argv.optimize, optCssStream()
-  .pipe gulp.dest 'build/vendor'
+  bowerStream = (suffix, stream, dest) ->
+    gulp.src bower(filter: new RegExp "^.*\.#{suffix}$"), base: 'bower_components'
+    .pipe plug.if argv.optimize, stream
+    .pipe gulp.dest dest
 
-gulp.task 'bower-font', ->
-  gulp.src bower(filter: new RegExp '^.*\.(eot|svg|ttf|woff)$'), base: 'bower_components'
-  # when optimizing need to put files directly in 'build/fonts'
-  #.pipe plug.if argv.optimize, optCssStream()
-  .pipe gulp.dest 'build/vendor'
+  js = bowerStream 'js', optJsStream(), 'build/vendor'
+  css = bowerStream 'css', optCssStream(), 'build/vendor'
+  fontDest = if argv.optimize then 'build/fonts' else 'build/vendor'
+  font = bowerStream '(eot|svg|ttf|woff)', plug.flatten(), fontDest
+
+  merge js, css, font
 
 gulp.task 'index', ->
   sources = gulp.src ['build/**/*.js', 'build/**/*.css', '!build/vendor/**'], read: false
@@ -79,7 +76,7 @@ gulp.task 'clean', (cb) ->
   del ['build'], cb
 
 gulp.task 'build', (cb) ->
-  run('clean', ['less', 'coffee', 'bower-js', 'bower-css', 'bower-font', 'template'], 'index', cb)
+  run('clean', ['less', 'coffee', 'bower', 'template'], 'index', cb)
 
 gulp.task 'default', (cb) ->
   run('build', 'watch', 'server', cb)
