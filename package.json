@@ -35,6 +35,7 @@
     "lazypipe": "^0.2.2",
     "lodash": "^2.4.1",
     "main-bower-files": "^2.0.0",
+    "merge-stream": "^0.1.6",
     "minimist": "^1.1.0",
     "run-sequence": "^0.3.6"
   }
