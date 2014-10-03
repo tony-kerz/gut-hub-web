@@ -7,38 +7,41 @@ del = require 'del'
 lazy = require 'lazypipe'
 merge = require 'merge-stream'
 
-optJsStream = lazy()
-  .pipe plug.concat, 'all.min.js'
+optStream = (file) ->
+  lazy()
+  .pipe plug.concat, file
   .pipe plug.rev
+
+optJsStream = (name) ->
+  optStream("#{name}.min.js")
   .pipe plug.uglify
 
-optCssStream = lazy()
-  .pipe plug.concat, 'all.min.css'
-  .pipe plug.rev
+optCssStream = (name) ->
+  optStream("#{name}.min.css")
   .pipe plug.minifyCss
 
 gulp.task 'coffee', ->
   gulp.src 'src/**/*.coffee'
   .pipe plug.coffee().on 'error', plug.util.log
   .pipe plug.if argv.optimize, plug.ngAnnotate()
-  .pipe plug.if argv.optimize, optJsStream()
+  .pipe plug.if argv.optimize, optJsStream('app')()
   .pipe gulp.dest 'build'
 
 gulp.task 'less', ->
   gulp.src 'src/less/main.less'
   .pipe plug.less()
-  .pipe plug.if argv.optimize, optCssStream()
-  .pipe gulp.dest 'build/assets'
+  .pipe plug.if argv.optimize, optCssStream('app')()
+  .pipe gulp.dest 'build'
 
 gulp.task 'bower', ->
 
-  bowerStream = (suffix, stream, dest) ->
+  bowerStream = (suffix, optStream, dest) ->
     gulp.src bower(filter: new RegExp "^.*\.#{suffix}$"), base: 'bower_components'
-    .pipe plug.if argv.optimize, stream
+    .pipe plug.if argv.optimize, optStream
     .pipe gulp.dest dest
 
-  js = bowerStream 'js', optJsStream(), 'build/vendor'
-  css = bowerStream 'css', optCssStream(), 'build/vendor'
+  js = bowerStream 'js', optJsStream('vendor')(), 'build/vendor'
+  css = bowerStream 'css', optCssStream('vendor')(), 'build/vendor'
   fontDest = if argv.optimize then 'build/fonts' else 'build/vendor'
   font = bowerStream '(eot|svg|ttf|woff)', plug.flatten(), fontDest
 
@@ -56,6 +59,7 @@ gulp.task 'index', ->
 gulp.task 'template', ->
   gulp.src ['src/app/**/*.tpl.html']
   .pipe plug.angularTemplatecache standalone: true
+  .pipe plug.if argv.optimize, optJsStream('template')()
   .pipe gulp.dest 'build'
 
 gulp.task 'watch', ->
