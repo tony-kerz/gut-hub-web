@@ -27,9 +27,9 @@ gulp.task 'coffee', ->
   .pipe plug.if argv.optimize, optJsStream('app')()
   .pipe gulp.dest 'build'
 
-gulp.task 'less', ->
-  gulp.src 'src/less/main.less'
-  .pipe plug.less()
+gulp.task 'sass', ->
+  gulp.src 'src/app/app.scss'
+  .pipe plug.sass(includePaths: ['bower_components'])
   .pipe plug.if argv.optimize, optCssStream('app')()
   .pipe gulp.dest 'build'
 
@@ -63,7 +63,7 @@ gulp.task 'template', ->
   .pipe gulp.dest 'build'
 
 gulp.task 'watch', ->
-  gulp.watch 'src/**/*.less', ['less']
+  gulp.watch 'src/**/*.scss', ['sass']
   gulp.watch 'src/**/*.coffee', ['coffee']
   gulp.watch 'src/index.html', ['index']
   gulp.watch 'src/**/*.tpl.html', ['template']
@@ -80,7 +80,7 @@ gulp.task 'clean', (cb) ->
   del ['build'], cb
 
 gulp.task 'build', (cb) ->
-  run('clean', ['less', 'coffee', 'bower', 'template'], 'index', cb)
+  run('clean', ['sass', 'coffee', 'bower', 'template'], 'index', cb)
 
 gulp.task 'default', (cb) ->
   run('build', 'watch', 'server', cb)

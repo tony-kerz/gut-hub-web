@@ -1,0 +1,120 @@
+@mixin color-scheme($background-color, $color: $white) {
+  color: $color;
+  background-color: $background-color;
+  fill: $background-color;
+}
+
+@mixin bg-striped($bg1, $bg2: transparent, $size: 3) {
+  $size: $size * 4px;
+  background-image: linear-gradient(135deg, $bg1 25%, $bg2 25%, $bg2 50%, $bg1 50%, $bg1 75%, $bg2 75%, $bg2);
+  background-size: $size $size;
+}
+
+body {
+  color: $text-grey;
+  -webkit-font-smoothing: antialiased;
+}
+
+h2, h3, h4 {
+  font-weight: 200;
+  letter-spacing: 0.05em;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid $text-grey;
+}
+
+.bg-in {
+  @include color-scheme($background-color: $service-in);
+  .main-view.provider & {
+    @include color-scheme($background-color: $provider-in);
+  }
+}
+
+.bg-out-offered {
+  @include color-scheme($background-color: $service-out-offered);
+  .main-view.provider & {
+    @include color-scheme($background-color: $provider-out-offered);
+  }
+}
+
+.bg-out-not-offered {
+  @include color-scheme($background-color: $service-out-not-offered);
+  .main-view.provider & {
+    @include color-scheme($background-color: $provider-out-not-offered);
+  }
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+.bg-light-grey {
+  background-color: $light-grey;
+}
+
+.txt-grey {
+  color: $text-grey;
+}
+.txt-normal {
+  font-weight: normal;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.text-anchor-middle  {
+  text-anchor: middle;
+}
+
+.block {
+  display: block;
+}
+
+.pad-bottom {
+  margin-bottom: $padding-block;
+}
+
+.row {
+  margin-bottom: 45px;
+}
+
+.main-row {
+  padding-top: $padding-block;
+  padding-bottom: $padding-block;
+}
+
+.gutters {
+  padding-left: $content-well;
+  padding-right: $content-well;
+}
+
+.left-gutter {
+  padding-left: $content-well;
+}
+
+.right-gutter {
+  padding-right: $content-well;
+}
+
+.fade {
+  @include opacity(0);
+  @include transition(all 200ms linear);
+}
+
+.css-form {
+  input {
+    &.ng-dirty {
+      &.ng-invalid {
+        background-color: $input-invalid;
+      }
+      &.ng-valid {
+        background-color: $input-valid;
+      }
+    }
+  }
+}
