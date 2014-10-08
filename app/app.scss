@@ -65,12 +65,6 @@ body {
 }
 
 .footer {
-  //margin-top: 80px;
-
-  .footer-inner {
-    padding: 40px 0;
-    border-top: 1px solid #DDD;
-  }
 
   .social {
     float: right;
@@ -98,6 +92,14 @@ body {
 
 #credit {
   float: left;
+}
+
+#flash {
+  padding-top: 40px;
+}
+
+#main {
+  margin-top: -45px;
 }
 
 /*

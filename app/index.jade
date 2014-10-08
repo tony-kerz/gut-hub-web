@@ -50,12 +50,12 @@ html(ng-app='gutHub', ng-controller='appControl')
                 a(ng-if='currentUserId()', ng-click='logout()') logout [{{currentUserId()}}]
                 a(ng-if='!currentUserId()', ui-sref='login') login
 
-      .container(style='margin-top:40px')
+      #flash.container
         .fade(flash-alert, active-class='in alert')
           strong.alert-heading {{flash.type}} &nbsp;
           span.alert-message {{flash.message}}
 
-      .container(ui-view='main', style='margin-top:-35px')
+      #main.container(ui-view='main')
 
     #footer.footer
       #credit Powered by Kerz Creative
