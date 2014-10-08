@@ -29,7 +29,7 @@ gulp.task 'coffee', ->
 
 gulp.task 'sass', ->
   gulp.src 'app/app.scss'
-  .pipe plug.sass(includePaths: ['bower_components'])
+  .pipe plug.sass(includePaths: ['bower_components'], sourceComments: 'normal')
   .pipe plug.if argv.optimize, optCssStream('app')()
   .pipe gulp.dest 'build'
 
