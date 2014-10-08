@@ -1,0 +1,117 @@
+// may have to swap the next two lines depending on the theme:
+// https://github.com/log0ymxm/bootswatch-scss#usage
+//
+@import "bootswatch-scss/spacelab/variables";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "bootswatch-scss/spacelab/bootswatch";
+
+@import 'variables';
+@import 'layout';
+@import 'about/about';
+@import 'home/home';
+@import 'recipe/index';
+
+html, body { height: 100%; width: 100%; margin: 0; }
+
+body {
+  padding-top: 40px;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+
+  .page-title, .page-title-icon {
+    color: $dark-grey;
+    margin: 0;
+  }
+
+  span.logo {
+    display: block;
+    font-size: 14px;
+    margin-top: -6px;
+  }
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  /* margin: 0 auto -30px; */
+  /* Pad bottom by footer height */
+  padding: 0 0 40px;
+}
+
+#footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-border-radius: 15px 15px 0 0;
+  -moz-border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+  border: 1px solid #d4d4d4;
+  background-image: linear-gradient(to top, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  /*border-width: 5px;*/
+  padding-top:10px;
+  padding-bottom:0px;
+  padding-right:20px;
+  padding-left:20px;
+}
+
+.footer {
+  //margin-top: 80px;
+
+  .footer-inner {
+    padding: 40px 0;
+    border-top: 1px solid #DDD;
+  }
+
+  .social {
+    float: right;
+    margin: 0;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 20px;
+
+      a, a:visited {
+        color: $gray-light;
+        text-decoration: none;
+        font-size: 20px;
+        /*
+        .transition( 250ms ease-in-out );
+*/
+        &:hover {
+          color: $gray;
+        }
+      }
+    }
+  }
+}
+
+#credit {
+  float: left;
+}
+
+/*
+#wrap > .container, .container-fluid {
+    padding-top: 65px;
+    padding-bottom: 30px;
+}
+*/
+.navbar-fixed-top, .navbar-fixed-bottom {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}

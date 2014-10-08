@@ -21,14 +21,14 @@ optCssStream = (name) ->
   .pipe plug.minifyCss
 
 gulp.task 'coffee', ->
-  gulp.src 'src/**/*.coffee'
+  gulp.src 'app/**/*.coffee'
   .pipe plug.coffee().on 'error', plug.util.log
   .pipe plug.if argv.optimize, plug.ngAnnotate()
   .pipe plug.if argv.optimize, optJsStream('app')()
   .pipe gulp.dest 'build'
 
 gulp.task 'sass', ->
-  gulp.src 'src/app/app.scss'
+  gulp.src 'app/app.scss'
   .pipe plug.sass(includePaths: ['bower_components'])
   .pipe plug.if argv.optimize, optCssStream('app')()
   .pipe gulp.dest 'build'
@@ -51,22 +51,24 @@ gulp.task 'index', ->
   sources = gulp.src ['build/**/*.js', 'build/**/*.css', '!build/vendor/**'], read: false
   bower_sources = gulp.src ['build/vendor/**/*.js', 'build/vendor/**/*.css'], read: false
 
-  gulp.src 'src/index.html'
+  gulp.src 'app/index.jade'
+  .pipe plug.jade()
   .pipe plug.inject sources, ignorePath: 'build'
   .pipe plug.inject bower_sources, ignorePath: 'build', name: 'bower'
   .pipe gulp.dest 'build'
 
 gulp.task 'template', ->
-  gulp.src ['src/app/**/*.tpl.html']
+  gulp.src ['app/**/*.tpl.jade']
+  .pipe plug.jade()
   .pipe plug.angularTemplatecache standalone: true
   .pipe plug.if argv.optimize, optJsStream('template')()
   .pipe gulp.dest 'build'
 
 gulp.task 'watch', ->
-  gulp.watch 'src/**/*.scss', ['sass']
-  gulp.watch 'src/**/*.coffee', ['coffee']
-  gulp.watch 'src/index.html', ['index']
-  gulp.watch 'src/**/*.tpl.html', ['template']
+  gulp.watch 'app/**/*.scss', ['sass']
+  gulp.watch 'app/**/*.coffee', ['coffee']
+  gulp.watch 'app/index.jade', ['index']
+  gulp.watch 'app/**/*.tpl.jade', ['template']
 
 gulp.task 'server', ->
   gulp.src 'build'
