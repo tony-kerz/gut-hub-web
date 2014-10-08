@@ -15,7 +15,9 @@
 html, body { height: 100%; width: 100%; margin: 0; }
 
 body {
-  padding-top: 40px;
+  //padding-top: 40px;
+  margin-top: 62px;
+  padding-top: 10px; // use variable
   font-family: 'helvetica neue', helvetica, arial, sans-serif;
 
   .page-title, .page-title-icon {
@@ -94,20 +96,25 @@ body {
   float: left;
 }
 
-#flash {
-  padding-top: 40px;
+.jumbotron {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-#main {
-  margin-top: -45px;
-}
+// #flash {
+//   padding-top: 40px;
+// }
+//
+// #main {
+//   margin-top: -45px;
+// }
 
-/*
-#wrap > .container, .container-fluid {
-    padding-top: 65px;
-    padding-bottom: 30px;
-}
-*/
+
+// wrap > .container, .container-fluid {
+//     //padding-top: 65px;
+//     padding-bottom: 30px;
+// }
+
 .navbar-fixed-top, .navbar-fixed-bottom {
     padding-top: 5px;
     padding-bottom: 5px;
