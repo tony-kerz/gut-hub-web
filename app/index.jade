@@ -16,39 +16,38 @@ html(ng-app='gutHub', ng-controller='appControl')
 
   body
     #wrap
-      .container
-        nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
-          <!-- Brand and toggle get grouped for better mobile display -->
-          .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#foo')
-              span.sr-only Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
+      nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+        <!-- Brand and toggle get grouped for better mobile display -->
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#foo')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
 
-            a.navbar-brand(href='#/home') gut-hub
+          a.navbar-brand(href='#/home') gut-hub
 
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav
-              li(ng-class="{ active: $state.includes('home') }")
-                a(ui-sref='home') Home
-              li(ng-class="{ active: $state.includes('recipes') }")
-                a(ui-sref='recipes.index') Recipes
-              li(ng-class="{ active: $state.includes('about') }")
-                a(ui-sref='about') About
-              li
-                a(href='https://github.com/tony-kerz/gut-hub-web#readme')
-                  i.fa.fa-book  Doc
-              li
-                a(href='https://github.com/tony-kerz/gut-hub-web')
-                  i.fa.fa-github-alt  Code
-              li
-                a(href='https://github.com/tony-kerz/gut-hub-web/issues')
-                  i.fa.fa-comments  Issues
-            ul.nav.navbar-nav.pull-right
-              li.pull-right
-                a(ng-if='currentUserId()', ng-click='logout()') logout [{{currentUserId()}}]
-                a(ng-if='!currentUserId()', ui-sref='login') login
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li(ng-class="{ active: $state.includes('home') }")
+              a(ui-sref='home') Home
+            li(ng-class="{ active: $state.includes('recipes') }")
+              a(ui-sref='recipes.index') Recipes
+            li(ng-class="{ active: $state.includes('about') }")
+              a(ui-sref='about') About
+            li
+              a(href='https://github.com/tony-kerz/gut-hub-web#readme')
+                i.fa.fa-book  Doc
+            li
+              a(href='https://github.com/tony-kerz/gut-hub-web')
+                i.fa.fa-github-alt  Code
+            li
+              a(href='https://github.com/tony-kerz/gut-hub-web/issues')
+                i.fa.fa-comments  Issues
+          ul.nav.navbar-nav.pull-right
+            li.pull-right
+              a(ng-if='currentUserId()', ng-click='logout()') logout [{{currentUserId()}}]
+              a(ng-if='!currentUserId()', ui-sref='login') login
 
       #flash.container
         .fade(flash-alert, active-class='in alert')
