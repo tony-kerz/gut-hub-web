@@ -6,6 +6,7 @@ run = require 'run-sequence'
 del = require 'del'
 lazy = require 'lazypipe'
 merge = require 'merge-stream'
+karma = require('karma').server
 
 optStream = (file) ->
   lazy()
@@ -19,6 +20,13 @@ optJsStream = (name) ->
 optCssStream = (name) ->
   optStream("#{name}.min.css")
   .pipe plug.minifyCss
+
+gulp.task 'karma', (done) ->
+  karma.start
+    configFile: "#{__dirname}/karma.conf.coffee"
+    singleRun: true
+    ,
+    done
 
 gulp.task 'coffee', ->
   gulp.src 'app/**/*.coffee'
@@ -86,3 +94,6 @@ gulp.task 'build', (cb) ->
 
 gulp.task 'default', (cb) ->
   run('build', 'watch', 'server', cb)
+
+gulp.task 'test', (cb) ->
+  run('build', 'karma', cb)
