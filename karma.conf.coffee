@@ -1,6 +1,5 @@
 module.exports = (config) ->
   config.set
-    basePath: 'build'
     browsers: ['Chrome']
     frameworks: ['jasmine']
     files: [
@@ -9,5 +8,6 @@ module.exports = (config) ->
       'vendor/bootstrap-sass-official/**/tooltip.js'
       'vendor/**/*.js'
       '**/*.js'
+      '../test/**/*.js'
     ]
     reporters: ['spec']

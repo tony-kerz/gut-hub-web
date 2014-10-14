@@ -8,6 +8,11 @@ lazy = require 'lazypipe'
 merge = require 'merge-stream'
 karma = require('karma').server
 
+build = 'build'
+buildApp = "#{build}/app"
+buildTest = "#{build}/test"
+buildVendor = "#{buildApp}/vendor"
+
 optStream = (file) ->
   lazy()
   .pipe plug.concat, file
@@ -24,22 +29,28 @@ optCssStream = (name) ->
 gulp.task 'karma', (done) ->
   karma.start
     configFile: "#{__dirname}/karma.conf.coffee"
+    basePath: buildApp
     singleRun: true
     ,
     done
 
+gulp.task 'coffee-test', ->
+  gulp.src ['app/**/*.spec.coffee']
+  .pipe plug.coffee().on 'error', plug.util.log
+  .pipe gulp.dest buildTest
+
 gulp.task 'coffee', ->
-  gulp.src 'app/**/*.coffee'
+  gulp.src ['app/**/*.coffee', '!app/**/*.spec.coffee']
   .pipe plug.coffee().on 'error', plug.util.log
   .pipe plug.if argv.optimize, plug.ngAnnotate()
   .pipe plug.if argv.optimize, optJsStream('app')()
-  .pipe gulp.dest 'build'
+  .pipe gulp.dest buildApp
 
 gulp.task 'sass', ->
   gulp.src 'app/app.scss'
   .pipe plug.sass(includePaths: ['bower_components'], sourceComments: 'normal')
   .pipe plug.if argv.optimize, optCssStream('app')()
-  .pipe gulp.dest 'build'
+  .pipe gulp.dest buildApp
 
 gulp.task 'bower', ->
 
@@ -48,29 +59,29 @@ gulp.task 'bower', ->
     .pipe plug.if argv.optimize, optStream
     .pipe gulp.dest dest
 
-  js = bowerStream 'js', optJsStream('vendor')(), 'build/vendor'
-  css = bowerStream 'css', optCssStream('vendor')(), 'build/vendor'
-  fontDest = if argv.optimize then 'build/fonts' else 'build/vendor'
+  js = bowerStream 'js', optJsStream('vendor')(), buildVendor
+  css = bowerStream 'css', optCssStream('vendor')(), buildVendor
+  fontDest = if argv.optimize then "#{build}/fonts" else buildVendor
   font = bowerStream '(eot|svg|ttf|woff)', plug.flatten(), fontDest
 
   merge js, css, font
 
 gulp.task 'index', ->
-  sources = gulp.src ['build/**/*.js', 'build/**/*.css', '!build/vendor/**'], read: false
-  bower_sources = gulp.src ['build/vendor/**/*.js', 'build/vendor/**/*.css'], read: false
+  sources = gulp.src ["#{buildApp}/**/*.js", "#{buildApp}/**/*.css", "!#{buildVendor}/**"], read: false
+  bower_sources = gulp.src ["#{buildVendor}/**/*.js", "#{buildVendor}/**/*.css"], read: false
 
   gulp.src 'app/index.jade'
   .pipe plug.jade()
-  .pipe plug.inject sources, ignorePath: 'build'
-  .pipe plug.inject bower_sources, ignorePath: 'build', name: 'bower'
-  .pipe gulp.dest 'build'
+  .pipe plug.inject sources, ignorePath: buildApp
+  .pipe plug.inject bower_sources, ignorePath: buildApp, name: 'bower'
+  .pipe gulp.dest buildApp
 
 gulp.task 'template', ->
   gulp.src ['app/**/*.tpl.jade']
   .pipe plug.jade()
   .pipe plug.angularTemplatecache standalone: true
   .pipe plug.if argv.optimize, optJsStream('template')()
-  .pipe gulp.dest 'build'
+  .pipe gulp.dest buildApp
 
 gulp.task 'watch', ->
   gulp.watch 'app/**/*.scss', ['sass']
@@ -79,7 +90,7 @@ gulp.task 'watch', ->
   gulp.watch 'app/**/*.tpl.jade', ['template']
 
 gulp.task 'server', ->
-  gulp.src 'build'
+  gulp.src buildApp
   .pipe plug.webserver(
     livereload: true
     directoryListing: false
@@ -96,4 +107,4 @@ gulp.task 'default', (cb) ->
   run('build', 'watch', 'server', cb)
 
 gulp.task 'test', (cb) ->
-  run('build', 'karma', cb)
+  run('build', 'coffee-test', 'karma', cb)
