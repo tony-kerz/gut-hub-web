@@ -95,6 +95,10 @@ gulp.task 'server', ->
     livereload: true
     directoryListing: false
     open: true
+    proxies: [
+      source: '/api'
+      target: 'http://localhost:3000/api'
+    ]
   )
 
 gulp.task 'clean', (cb) ->

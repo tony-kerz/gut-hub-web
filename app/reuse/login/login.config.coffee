@@ -1,4 +1,4 @@
-angular.module 'gutHub.session'
+angular.module 'kerz.login'
 
 .config ($stateProvider) ->
 
@@ -6,7 +6,7 @@ angular.module 'gutHub.session'
     url: '/login'
     views:
       'main':
-        templateUrl: 'session/login.tpl.html'
-        controller: 'loginControl'
+        templateUrl: 'reuse/login/login.tpl.html'
+        controller: 'SecurityController'
     data:
       pageTitle: 'login'

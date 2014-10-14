@@ -1,7 +1,7 @@
 angular.module 'gutHub'
 
 # https://github.com/angular-ui/ui-router/blob/master/sample/module.js
-.run ($rootScope, $state, $stateParams, session, flash) ->
+.run ($rootScope, $state, $stateParams, flash) ->
   $rootScope.$state = $state
   $rootScope.$stateParams = $stateParams
   #$rootScope.currentUser = null
@@ -39,6 +39,6 @@ angular.module 'gutHub'
 #  $http.get("#{env.apiUrlRoot}/dummy").then (response) ->
 #    console.log "dummy: response=%o", response
 
-.run (session) ->
-  session.checkCurrentUser().then (resolution) ->
-    console.log "app.run: check-current-user: resolution=%o", resolution
+# .run (session) ->
+#   session.checkCurrentUser().then (resolution) ->
+#     console.log "app.run: check-current-user: resolution=%o", resolution

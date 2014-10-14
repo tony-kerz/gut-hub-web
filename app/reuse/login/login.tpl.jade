@@ -1,0 +1,14 @@
+form.form-horizontal.css-form(role='form', name='loginForm')
+  .form-group
+    label.col-md-2.control-label(for='inputEmail') Email
+    .col-md-4
+      input.form-control(type='email', id='inputEmail', placeholder='email', ng-model='user.email', required, autofocus)
+
+  .form-group
+    label.col-md-2.control-label(for='inputPassword') Password
+    .col-md-4
+      input.form-control(type='password', id='inputPassword', placeholder='password', ng-model='user.password', required)
+
+  .form-group
+    .col-md-4.col-md-offset-2
+      button.btn.btn-default(type='submit', ng-click='login(user)', ng-disabled='loginForm.$invalid') Sign in

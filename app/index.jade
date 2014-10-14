@@ -1,5 +1,6 @@
 doctype html
-html(ng-app='gutHub', ng-controller='appControl')
+<!-- html(ng-app='gutHub', ng-controller='appControl') -->
+html(ng-app='gutHub')
   head
     title(ng-bind='pageTitle')
     <!-- bower:css -->
@@ -44,7 +45,7 @@ html(ng-app='gutHub', ng-controller='appControl')
             li
               a(href='https://github.com/tony-kerz/gut-hub-web/issues')
                 i.fa.fa-comments  Issues
-          ul.nav.navbar-nav.pull-right
+          ul.nav.navbar-nav.pull-right(ng-controller='SecurityController')
             li.pull-right
               a(ng-if='currentUserId()', ng-click='logout()') logout [{{currentUserId()}}]
               a(ng-if='!currentUserId()', ui-sref='login') login
