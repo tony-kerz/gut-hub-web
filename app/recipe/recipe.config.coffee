@@ -1,4 +1,4 @@
-angular.module('gutHub.recipe')
+angular.module 'gutHub.recipe'
 
 .config ($stateProvider) ->
 

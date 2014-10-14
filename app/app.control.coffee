@@ -1,4 +1,4 @@
-angular.module('gutHub')
+angular.module 'gutHub'
 
 .controller 'appControl',
   ($scope, session, flash) ->
@@ -14,7 +14,3 @@ angular.module('gutHub')
         console.log "app-ctrl.logout: rejection=%o", rejection
         flash.error = "encountered issue logging out..."
       )
-
-
-
-

@@ -1,4 +1,4 @@
-angular.module('gutHub.recipe')
+angular.module 'gutHub.recipe'
 
 .controller 'recipeIndexControl',
   ($scope, recipes, session) ->
@@ -11,5 +11,3 @@ angular.module('gutHub.recipe')
   ($scope, recipe) ->
     console.log 'recipe-get-ctrl: recipe=%o', recipe
     $scope.recipe = recipe
-
-

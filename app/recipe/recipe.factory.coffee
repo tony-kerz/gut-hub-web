@@ -1,8 +1,8 @@
-angular.module('gutHub.recipe')
+angular.module 'gutHub.recipe'
 
 .factory 'httpRecipeService', ($http) ->
 
-  baseUrl = "/recipes"
+  baseUrl = '/recipes'
 
   index: ->
     $http.get("#{baseUrl}")

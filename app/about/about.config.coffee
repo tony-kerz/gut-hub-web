@@ -1,4 +1,4 @@
-angular.module('gutHub.about')
+angular.module 'gutHub.about'
 
 .config ($stateProvider) ->
 

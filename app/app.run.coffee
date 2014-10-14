@@ -1,4 +1,4 @@
-angular.module('gutHub')
+angular.module 'gutHub'
 
 # https://github.com/angular-ui/ui-router/blob/master/sample/module.js
 .run ($rootScope, $state, $stateParams, session, flash) ->
@@ -42,4 +42,3 @@ angular.module('gutHub')
 .run (session) ->
   session.checkCurrentUser().then (resolution) ->
     console.log "app.run: check-current-user: resolution=%o", resolution
-

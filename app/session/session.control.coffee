@@ -1,4 +1,4 @@
-angular.module('gutHub.session')
+angular.module 'gutHub.session'
 
 .controller 'loginControl',
   ($scope, session, flash, $rootScope, $state) ->
@@ -17,7 +17,3 @@ angular.module('gutHub.session')
         console.log "login-then: rejection=%o", rejection
         flash.error = 'login failed'
       )
-
-
-
-

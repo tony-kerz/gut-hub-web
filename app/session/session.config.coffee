@@ -1,4 +1,4 @@
-angular.module('gutHub.session')
+angular.module 'gutHub.session'
 
 .config ($stateProvider) ->
 
